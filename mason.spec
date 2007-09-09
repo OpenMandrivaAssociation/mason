@@ -1,21 +1,18 @@
-%define	name	mason
 %define module	HTML-Mason
-%define version	1.33
-%define release	%mkrel 5
 
 # useless stuff pulled by ./eg/MyApp/MasonWithSession.pm
 %define _requires_exceptions perl(MasonX::Request::PlusApacheSession)
 %define _provides_exceptions perl(My
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 Summary:	Powerful Perl-based web site development and delivery engine
+Name:		mason
+Version:	1.33
+Release:	%mkrel 6
 License:	GPL/Artistic
 Group:		Networking/WWW
 URL:		http://masonhq.com/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{module}-%{version}.tar.bz2 
-Patch0:		HTML-Mason-1.32-netdisco.diff.bz2
+Patch0:		HTML-Mason-1.32-netdisco.diff
 Requires:	apache-mod_perl
 Requires:	perl-HTML-Parser
 Requires:	perl-libapreq2
@@ -38,9 +35,9 @@ BuildRequires:	perl(Scalar::Util) >= 1.01
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Test::Builder)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Provides:	perl-HTML-Mason = %{version}-%{release}
 Obsoletes:	perl-HTML-Mason
-Provides:	perl-HTML-Mason
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Mason allows web pages and sites to be constructed from shared, reusable
@@ -54,6 +51,7 @@ Other Mason features include a graphical site previewing utility, an HTML/data
 caching model, and the ability to walk through requests with the Perl debugger.
 
 %prep
+
 %setup -q -n %{module}-%{version}
 %patch0 -p0
 
