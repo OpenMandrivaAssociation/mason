@@ -37,7 +37,6 @@ BuildRequires:	perl(Test::Builder)
 BuildArch:	noarch
 Provides:	perl-HTML-Mason = %{version}-%{release}
 Obsoletes:	perl-HTML-Mason
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Mason allows web pages and sites to be constructed from shared, reusable
