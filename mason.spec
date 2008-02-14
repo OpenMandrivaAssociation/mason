@@ -10,6 +10,7 @@ Version:	1.33
 Release:	%mkrel 6
 License:	GPL/Artistic
 Group:		Networking/WWW
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://masonhq.com/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{module}-%{version}.tar.bz2 
 Patch0:		HTML-Mason-1.32-netdisco.diff
