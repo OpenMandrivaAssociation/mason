@@ -7,7 +7,7 @@
 Summary:	Powerful Perl-based web site development and delivery engine
 Name:		mason
 Version:	1.33
-Release:	%mkrel 6
+Release:	%mkrel 8
 License:	GPL/Artistic
 Group:		Networking/WWW
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
