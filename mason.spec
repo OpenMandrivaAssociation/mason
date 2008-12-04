@@ -6,13 +6,12 @@
 
 Summary:	Powerful Perl-based web site development and delivery engine
 Name:		mason
-Version:	1.33
-Release:	%mkrel 8
+Version:	1.40
+Release:	%mkrel 1
 License:	GPL/Artistic
 Group:		Networking/WWW
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://masonhq.com/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{module}-%{version}.tar.bz2 
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{module}-%{version}.tar.gz
 Patch0:		HTML-Mason-1.32-netdisco.diff
 Requires:	apache-mod_perl
 Requires:	perl-HTML-Parser
@@ -38,6 +37,7 @@ BuildRequires:	perl(Test::Builder)
 BuildArch:	noarch
 Provides:	perl-HTML-Mason = %{version}-%{release}
 Obsoletes:	perl-HTML-Mason
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Mason allows web pages and sites to be constructed from shared, reusable
