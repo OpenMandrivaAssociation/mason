@@ -1,24 +1,21 @@
-%define module	HTML-Mason
+%define upstream_name	 HTML-Mason
+%define upstream_version 1.42
 
 # useless stuff pulled by ./eg/MyApp/MasonWithSession.pm
 %define _requires_exceptions perl(MasonX::Request::PlusApacheSession)
 %define _provides_exceptions perl(My
 
-Summary:	Powerful Perl-based web site development and delivery engine
 Name:		mason
-Version:	1.40
+Version:	%perl_convert_version %{upstream_version}
 Release:	%mkrel 1
+
+Summary:	Powerful Perl-based web site development and delivery engine
 License:	GPL/Artistic
 Group:		Networking/WWW
 URL:		http://masonhq.com/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{module}-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		HTML-Mason-1.32-netdisco.diff
-Requires:	apache-mod_perl
-Requires:	perl-HTML-Parser
-Requires:	perl-libapreq2
-# webapp macros and scriptlets
-Requires(post):		rpm-helper >= 0.16
-Requires(postun):	rpm-helper >= 0.16
+
 BuildRequires:	rpm-helper >= 0.16
 BuildRequires:	rpm-mandriva-setup >= 1.23
 BuildRequires:	perl-libapreq2
@@ -35,9 +32,16 @@ BuildRequires:	perl(Scalar::Util) >= 1.01
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Test::Builder)
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+
+Requires:	apache-mod_perl
+Requires:	perl-HTML-Parser
+Requires:	perl-libapreq2
+# webapp macros and scriptlets
+Requires(post):		rpm-helper >= 0.16
+Requires(postun):	rpm-helper >= 0.16
 Provides:	perl-HTML-Mason = %{version}-%{release}
 Obsoletes:	perl-HTML-Mason
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Mason allows web pages and sites to be constructed from shared, reusable
@@ -52,7 +56,7 @@ caching model, and the ability to walk through requests with the Perl debugger.
 
 %prep
 
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p0
 
 %build
