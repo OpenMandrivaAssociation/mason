@@ -1,5 +1,5 @@
 %define upstream_name	 HTML-Mason
-%define upstream_version 1.42
+%define upstream_version 1.43
 
 # useless stuff pulled by ./eg/MyApp/MasonWithSession.pm
 %define _requires_exceptions perl(MasonX::Request::PlusApacheSession)
