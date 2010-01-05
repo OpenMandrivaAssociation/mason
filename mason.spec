@@ -1,5 +1,5 @@
 %define upstream_name	 HTML-Mason
-%define upstream_version 1.43
+%define upstream_version 1.44
 
 # useless stuff pulled by ./eg/MyApp/MasonWithSession.pm
 %define _requires_exceptions perl(MasonX::Request::PlusApacheSession)
@@ -16,21 +16,23 @@ URL:		http://masonhq.com/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		HTML-Mason-1.32-netdisco.diff
 
+BuildRequires:	apache-mod_perl
+BuildRequires:	perl-libapreq2
 BuildRequires:	rpm-helper >= 0.16
 BuildRequires:	rpm-mandriva-setup >= 1.23
-BuildRequires:	perl-libapreq2
-BuildRequires:	apache-mod_perl
 BuildRequires:	perl(Cache::Cache) >= 1.0
 BuildRequires:	perl-CGI >= 1:3.08
 BuildRequires:	perl(Class::Container) >= 0.07
 BuildRequires:	perl(Exception::Class) >= 1.15
 BuildRequires:	perl(File::Spec) >= 0.8
 BuildRequires:	perl(HTML::Entities)
+BuildRequires:	perl(Log::Any)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(Params::Validate) >= 0.70
 BuildRequires:	perl(Scalar::Util) >= 1.01
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Test::Builder)
+
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
