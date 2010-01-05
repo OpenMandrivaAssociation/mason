@@ -32,6 +32,7 @@ BuildRequires:	perl(Params::Validate) >= 0.70
 BuildRequires:	perl(Scalar::Util) >= 1.01
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Test::Builder)
+BuildRequires:	perl(Test::Deep)
 
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
