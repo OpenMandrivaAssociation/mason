@@ -1,5 +1,5 @@
 %define upstream_name	 HTML-Mason
-%define upstream_version 1.44
+%define upstream_version 1.45
 
 # useless stuff pulled by ./eg/MyApp/MasonWithSession.pm
 %define _requires_exceptions perl(MasonX::Request::PlusApacheSession)
@@ -7,7 +7,7 @@
 
 Name:		mason
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 
 Summary:	Powerful Perl-based web site development and delivery engine
 License:	GPL/Artistic
