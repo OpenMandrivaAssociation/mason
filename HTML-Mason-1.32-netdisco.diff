@@ -1,0 +1,10 @@
+--- lib/HTML/Mason/ApacheHandler.pm	2006-01-03 19:01:00.000000000 +0100
++++ lib/HTML/Mason/ApacheHandler.pm.oden	2006-01-30 01:01:14.000000000 +0100
+@@ -246,6 +246,7 @@
+    if ($ENV{MOD_PERL}) {
+         if (APACHE2) {
+             require Apache2::RequestRec;
++            require Apache2::Connection;
+             require Apache2::RequestIO;
+             require Apache2::ServerUtil;
+             require Apache2::RequestUtil;
