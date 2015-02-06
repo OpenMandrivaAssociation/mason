@@ -12,7 +12,7 @@
 
 Name:		mason
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 
 Summary:	Powerful Perl-based web site development and delivery engine
 License:	GPL/Artistic
