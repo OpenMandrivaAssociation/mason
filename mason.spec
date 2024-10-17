@@ -17,7 +17,7 @@ Release:	2
 Summary:	Powerful Perl-based web site development and delivery engine
 License:	GPL/Artistic
 Group:		Networking/WWW
-URL:		http://masonhq.com/
+URL:		https://masonhq.com/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		HTML-Mason-1.32-netdisco.diff
 
